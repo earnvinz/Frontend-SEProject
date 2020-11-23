@@ -60,6 +60,10 @@ public class BankAccountService {
         restTemplate.postForObject(url,bankAccount,BankAccount.class);
     }
 
+    public void DeleteByCustomerId(int customerId){
+        String url = "http://localhost:8091/api/bankaccount/customer/"+customerId;
+        restTemplate.delete(url);
+    }
 
 }
 

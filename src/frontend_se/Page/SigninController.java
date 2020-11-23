@@ -26,6 +26,9 @@ public class SigninController {
     private TextField Id;
     @FXML
     private PasswordField pin;
+
+    @FXML
+    private Label error;
     private CustomerService customerService;
 
     public void login(ActionEvent event) throws IOException {
@@ -41,9 +44,9 @@ public class SigninController {
         else if(!Id.getText().equals("")) {
 
 
-                int id = Integer.parseInt(Id.getText());
-                if (customerService.getoneCustomer(id).getPin().equals(pin.getText())) {
-                    OnlineCustomer.setCustomer(customerService.getoneCustomer(id));
+
+                if (customerService.getBycardNumber(Id.getText()) != null && customerService.getBycardNumber(Id.getText()).getPin().equals(pin.getText())) {
+                    OnlineCustomer.setCustomer(customerService.getBycardNumber(Id.getText()));
 
 
                     Parent root = FXMLLoader.load(getClass().getResource("Account.fxml"));
@@ -52,6 +55,10 @@ public class SigninController {
                     stage.show();
                     stage.setResizable(false);
 
+                }
+                else{
+                    error.setText("Id / password doesn't match");
+                    error.setVisible(true);
                 }
 
         }

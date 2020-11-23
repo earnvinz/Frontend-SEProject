@@ -121,7 +121,7 @@
             <Label fx:id="alertopen" layoutX="82.0" layoutY="166.0" prefHeight="17.0" prefWidth="269.0" text="Label" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="closepane" layoutX="167.0" layoutY="299.0" prefHeight="238.0" prefWidth="385.0" AnchorPane.topAnchor="36.0">
+      <AnchorPane fx:id="closepane" layoutX="167.0" layoutY="299.0" prefHeight="238.0" prefWidth="385.0" visible="false" AnchorPane.topAnchor="36.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="238.0" stroke="BLACK" strokeType="INSIDE" width="396.0">
                <fill>
@@ -146,6 +146,12 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </CheckBox>
+            <Label fx:id="alertclose" layoutX="130.0" layoutY="68.0" prefHeight="17.0" prefWidth="208.0" text="*Card number not assign in server" textFill="#f50000" visible="false" />
+            <Label fx:id="finishclose" layoutX="204.0" layoutY="159.0" prefHeight="21.0" prefWidth="61.0" text="Finished " textFill="#61f500" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="deposit_withdrawpane" layoutX="167.0" layoutY="36.0" prefHeight="238.0" prefWidth="385.0" visible="false">
@@ -161,26 +167,35 @@
                   </LinearGradient>
                </fill>
             </Rectangle>
-            <TextField fx:id="acnumber" layoutX="165.0" layoutY="66.0" prefHeight="25.0" prefWidth="184.0" />
+            <TextField fx:id="acnumber" disable="true" layoutX="165.0" layoutY="66.0" prefHeight="25.0" prefWidth="184.0" />
             <Label layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="133.0" text="Account - number">
                <font>
                   <Font name="Century" size="15.0" />
                </font>
             </Label>
-            <Button layoutX="162.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Submit" />
+            <Button fx:id="submitdepobtn" disable="true" layoutX="257.0" layoutY="181.0" mnemonicParsing="false" onAction="#depo_withDraw" prefHeight="25.0" prefWidth="88.0" text="Submit">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Button>
             <MenuButton fx:id="depowithchoice" layoutX="43.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Deposit/Withdraw">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem mnemonicParsing="false" onAction="#setDeposit" text="Deposit" />
+                <MenuItem mnemonicParsing="false" onAction="#setWithdraw" text="Withdraw" />
               </items>
                <font>
                   <Font name="Century" size="12.0" />
                </font>
             </MenuButton>
-            <TextField fx:id="amount" layoutX="165.0" layoutY="107.0" prefHeight="25.0" prefWidth="96.0" />
-            <Label layoutX="14.0" layoutY="107.0" prefHeight="25.0" prefWidth="133.0" text="Amount">
+            <TextField fx:id="amount" disable="true" layoutX="165.0" layoutY="119.0" prefHeight="25.0" prefWidth="96.0" />
+            <Label layoutX="14.0" layoutY="119.0" prefHeight="25.0" prefWidth="133.0" text="Amount">
                <font>
                   <Font name="Century" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="errordepowith" layoutX="17.0" layoutY="160.0" prefHeight="21.0" prefWidth="260.0" text="Label" textFill="#ff0606" visible="false">
+               <font>
+                  <Font name="System Italic" size="17.0" />
                </font>
             </Label>
          </children>

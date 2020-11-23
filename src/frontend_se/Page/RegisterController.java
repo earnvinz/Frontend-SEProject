@@ -38,7 +38,8 @@ public class RegisterController {
         stage.setResizable(false);
     }
     public void accept(ActionEvent event) throws IOException{
-        if(!fname.getText().equals("") && !lname.getText().equals("") && !cardnumber.getText().equals("") && !password.getText().equals("")){
+        if(!fname.getText().equals("") && !lname.getText().equals("") && !cardnumber.getText().equals("") && !password.getText().equals("")
+        && customerService.getBycardNumber(cardnumber.getText()) == null){
             customerService.createCustomer(new Customer(fname.getText(),lname.getText(),cardnumber.getText(),password.getText()));
 
             fname.setText("");
