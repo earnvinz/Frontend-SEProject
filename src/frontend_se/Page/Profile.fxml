@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend_se.Page.ProfileController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="401.0" stroke="BLACK" strokeType="INSIDE" width="423.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#1b5b83" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="360.0" layoutX="19.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="382.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="19.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#79413c" height="4.0" layoutX="24.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="370.0" />
+      <Label layoutX="40.0" layoutY="39.0" prefHeight="39.0" prefWidth="98.0" text="Profile" textFill="#d74f4f" underline="true">
+         <font>
+            <Font name="Century" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="111.0" prefHeight="24.0" prefWidth="82.0" text="Firstname : " textFill="#2c230e" AnchorPane.topAnchor="111.0">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="152.0" prefHeight="21.0" prefWidth="82.0" text="lastname   : " textFill="#2c230e" AnchorPane.topAnchor="151.0">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="172.0" prefHeight="21.0" prefWidth="98.0" text="cardnumber : " textFill="#2c230e" AnchorPane.topAnchor="191.0">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="219.0" prefHeight="21.0" prefWidth="98.0" text="pin        :   " textFill="#2c230e" AnchorPane.topAnchor="231.0">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="235.0" layoutY="341.0" onAction="#ChangePassword" prefHeight="23.0" prefWidth="159.0" text="Change password here &lt;---" textFill="#511717" underline="true">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Hyperlink>
+      <Button layoutX="33.0" layoutY="317.0" mnemonicParsing="false" onAction="#Back" prefHeight="39.0" prefWidth="57.0" style="-fx-background-color: #ababab;">
+         <graphic>
+            <ImageView blendMode="DARKEN" fitHeight="41.0" fitWidth="45.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Picture/Back.jpg" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="fname" layoutX="214.0" layoutY="117.0" prefHeight="24.0" prefWidth="159.0" text="Firstname : " textFill="#2c230e">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lname" layoutX="214.0" layoutY="150.0" prefHeight="24.0" prefWidth="159.0" text="Firstname : " textFill="#2c230e">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cardnumber" layoutX="194.0" layoutY="187.0" prefHeight="24.0" prefWidth="179.0" text="xxxxxxxxxxxxx" textFill="#2c230e">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="pin" layoutX="214.0" layoutY="230.0" prefHeight="24.0" prefWidth="159.0" text="Firstname : " textFill="#2c230e">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
